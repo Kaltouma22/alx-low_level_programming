@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- *i Description: A C program that prints all possible combination of singl-digit numbers.
+ *i Description: A C program that prints all possible combination of numbers.
  *
  * Return: Alwayz 0 (success)
 */
@@ -21,7 +21,6 @@ int main(void)
 			putchar(' ');
 		}
 	}
-	
 	putchar('\n');
 	return (0);
 }
