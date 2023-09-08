@@ -3,7 +3,9 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/* betty style doc for function main goes there 
+ * main - Entry point
+*/
 int main(void)
 {
 	int n;
