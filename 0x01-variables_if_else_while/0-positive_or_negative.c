@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: A C program that prints a positive or negative or zero. 
+ * Description: A C program that prints a positive or negative or zero.
  *
  * Return: Alwayz 0 (success)
 */
