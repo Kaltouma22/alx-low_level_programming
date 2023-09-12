@@ -1,15 +1,21 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point
  *
- *i Description: A C program that prints all possible combination of numbers.
+ *i Description: for prints _putchar we used putchar prototype.
  *
  * Return: Alwayz 0 (success)
 */
 
 int main(void)
 {
-	printf("_putchar\n");
+	int ch;
+	char str[] = "_putchar";
+
+	for (ch = 0; ch < 8; ch++)
+		_putchar(str[ch]);
+	_putchar('\n');
+
 	return (0);
 }
