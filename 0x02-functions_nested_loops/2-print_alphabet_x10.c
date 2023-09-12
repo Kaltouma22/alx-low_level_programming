@@ -1,17 +1,18 @@
 #include "main.h"
 
 /**
- * 
- * Describtion: print 10 line alphabet with putchar.
- * print_alphabet - utilizes on the _putchar function to print
- * the alphabet a - z
+ * main - Entry point
+ *
+ * Description: A C program that prints 10 lines alphabet.
+ *
+ * Return: Alwayz 0 (success)
 */
 
 void print_alphabet_x10(void)
 {
 	int ch;
 	int i = 1;
-	while( i <= 10 )
+	while(i <= 10)
 	{
 		for (ch = 'a'; ch <= 'z'; ch++)
 			_putchar(ch);
