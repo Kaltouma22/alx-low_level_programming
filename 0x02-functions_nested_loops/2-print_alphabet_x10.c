@@ -3,9 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: A C program that prints 10 lines alphabet.
- *
- * Return: Alwayz 0 (success)
+ * Description: print 10 lines alphabet print_alphabet_x10.
 */
 
 void print_alphabet_x10(void)
