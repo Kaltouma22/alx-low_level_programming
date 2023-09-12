@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * Description: print 10 lines alphabet print_alphabet_x10.
- *
+ * print_alphabet_x10 - use the function to print alphabet 10 times.
+ * 
 */
+
 void print_alphabet_x10(void)
 {
-	int ch;
-	int i = 1;
+	int ch, i = 1;
 
 	while (i <= 10)
 	{
