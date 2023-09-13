@@ -8,7 +8,7 @@
  * Return: Alwayz 0
 */
 
-int main (void)
+int main(void)
 {
 	unsigned long int a = 1;
 	unsigned long int b = 2;
