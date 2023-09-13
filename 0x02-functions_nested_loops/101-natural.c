@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- *i Description: A C program that prints sum of all the multiples of 3 or 5 below.
+ *i Description: A C program that prints sum of multiples.
  *
  * Return: Alwayz 0
 */
