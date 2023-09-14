@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- *i Description: A C program that prints Fizz-Buzz test.
+ * Description: A C program that prints Fizz-Buzz test.
  *
  * Return: Alwayz 0
 */
