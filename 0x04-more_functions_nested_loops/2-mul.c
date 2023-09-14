@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _mul - checks for calcul the multiplication.
+ * mul - checks for calcul the multiplication.
  *
  * @a: first input in function
  * @b: second input in function
