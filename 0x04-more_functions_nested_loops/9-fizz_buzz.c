@@ -22,7 +22,8 @@ int main(void)
 			printf("Fizz");
 		if (i % 5 == 0)
 			printf("Buzz");
-		printf(" ");
+		if (i != 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
