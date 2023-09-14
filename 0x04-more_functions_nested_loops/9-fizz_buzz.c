@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Description: A C program that prints Fizz-Buzz test.
+ * main - prints numbers 1 to 100
+ * Fizz instead of the numbers multiples 3
+ * Buzz instead of the numbers multiples 5
+ * FizzBuzz instead of the numbers multiples 3 & 5
+ * separated by space
  *
  * Return: Alwayz 0
 */
