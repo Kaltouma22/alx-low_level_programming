@@ -14,18 +14,12 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if ((i % 3 != 0) && (i % 5 != 0))
-		{
+		if (i % 3 != 0 && i % 5 != 0)
 			printf("%d", i);
-		}
 		if (i % 3 == 0)
-		{
-			printf("fizz");
-		}
+			printf("Fizz");
 		if (i % 5 == 0)
-		{
-			printf("buzz");
-		}
+			printf("Buzz");
 		printf(" ");
 	}
 	printf("\n");
