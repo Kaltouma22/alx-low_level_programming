@@ -6,7 +6,7 @@
  * @src: for check resulta
  * Description: this function for copies the string pointed to by src
  * including the terminating null byte
- * Return : return (dest)
+ * Return: return (dest)
 */
 
 char *_strcpy(char *dest, char *src)
