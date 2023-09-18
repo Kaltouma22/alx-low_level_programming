@@ -7,7 +7,7 @@
  * Description: this function for copies the string pointed to by src
  * @dest: this is for output
  * @src: for check resulta
- * Return : return dest
+ * Return : return to point dest
 */
 
 char *_strcpy(char *dest, char *src)
@@ -18,6 +18,6 @@ char *_strcpy(char *dest, char *src)
 		i++;
 		dest[i] = src[i];
 	} while (src[i] != '\0');
-	
+
 	return (dest);
 }
