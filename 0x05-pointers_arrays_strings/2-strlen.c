@@ -2,7 +2,7 @@
 
 /**
  * int _strlen - that returns the length of a string
- * @strlen: for check result
+ * @_strlen: for check result
  * @s:this is a number for check
 */
 
