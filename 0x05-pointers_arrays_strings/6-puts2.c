@@ -2,6 +2,7 @@
 
 /**
  * puts2 -  that prints every other character of a string
+ * @str: this is for output
 */
 
 void puts2(char *str)
@@ -11,9 +12,9 @@ void puts2(char *str)
 
 	while (str[len] != '\0')
 		len++;
-	for (i = 0; i < len; i=i+2)
+	for (i = 0; i < len; i = i + 2)
 	{
-		putchar(str[i]);;
+		putchar(str[i]);
 	}
 	putchar('\n');
 }
