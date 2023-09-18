@@ -3,6 +3,7 @@
 /**
  * *_strcpy - that copies the string pointed by src
  * Description: this function for copies the string pointed to by src
+ * including the terminating null byte (\0) to the buffer pointed to by dest
  * @dest: this is for output
  * @src: for check resulta
  * Return : return to point dest
