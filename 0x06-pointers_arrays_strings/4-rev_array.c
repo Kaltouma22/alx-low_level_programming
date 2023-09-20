@@ -5,6 +5,8 @@
  *
  * @a: first number for check code
  * @n: second number
+ * @i: this int for check result
+ * @t: int for check output
 */
 
 void reverse_array(int *a, int n)
@@ -13,8 +15,8 @@ void reverse_array(int *a, int n)
 
 	for (i = 0; i < n / 2; i++)
 	{
-		t = i[i];
-		i[i] = i[n -1 - i];
-		i[n - 1 - i] = t;
+		t = a[i];
+		a[i] = a[n -1 - i];
+		a[n - 1 - i] = t;
 	}
 }
