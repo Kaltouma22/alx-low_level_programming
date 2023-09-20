@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * reverse_array - that compares two strings
- *
+ * reverse_array - that reverses the content of an array of integers
  * @a: first number for check code
  * @n: second number
- * @i: this int for check result
  * @t: int for check output
 */
 
