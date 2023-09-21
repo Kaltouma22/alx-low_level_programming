@@ -19,9 +19,18 @@ char *cap_string(char *str)
 			*ptr = *ptr - ('a' - 'A');
 			new_word = false;
 		}
-		else if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n')
+		else if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n' || *ptr == ',')
 		{
-			new_word = true;
+			putchar(*ptr == ';');
+			putchar(*ptr == '.');
+			putchar(*ptr == '!');
+			putchar(*ptr == '?');
+			putchar(*ptr == '"');
+			putchar(*ptr == '(');
+			putchar(*ptr == ')');
+			putchar(*ptr == '{');
+			putchar(*ptr == '}');
+		new_word = true;
 		}
 		else
 		{
