@@ -19,14 +19,11 @@ char *cap_string(char *str)
 			*ptr = *ptr - ('a' - 'A');
 			new_word = false;
 		}
-		else if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n')
+		else if	(*ptr == ' ' || *ptr == '\t' || *ptr == '\n' || *ptr == ','
+			|| *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '?'
+			|| *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
 		{
-			if (*ptr == ',' || *ptr == ';')
-			if (*ptr == '.' || *ptr == '!')
-			if (*ptr == '?' || *ptr == '"')
-			if (*ptr == '(' || *ptr == ')')
-			if (*ptr == '{' || *ptr == '}')
-		new_word = true;
+			new_word = true;
 		}
 		else
 		{
