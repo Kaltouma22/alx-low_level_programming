@@ -10,18 +10,19 @@
 
 char *rot13(char *str)
 {
-	char *ptr = str; 
+	char *ptr = str;
 	char lower[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char upper[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	int i;
+
+	int z;
 
 	while (*str)
 	{
-		for (i = 0; i <= 52; i++)
+		for (z = 0; z <= 52; z++)
 		{
-			if (*str == lower[i])
+			if (*str == lower[z])
 			{
-				*str = upper[i];
+				*str = upper[z];
 				break;
 			}
 		}
