@@ -11,31 +11,20 @@
 char *leet(char *str)
 {
 	char *ptr = str;
+	char alpha[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	int num[] = {4, 4, 3, 3, 0, 0, 7, 7, 1, 1};
+	unsigned int k;
 
-	while (*ptr != '\0')
+	while (*ptr)
 	{
-		if (*ptr == 'a' || *ptr == 'A')
+		for (k = 0; k < sizeof(alpha) / sizeof(char); k++)
 		{
-			*ptr = '4';
-		}
-		else if (*ptr == 'e' || *ptr == 'E')
-		{
-			*ptr = '3';
-		}
-		else if (*ptr == 'o' || *ptr == 'O')
-		{
-			*ptr = '0';
-		}
-		else if (*ptr == 't' || *ptr == 'T')
-		{
-			*ptr = '7';
-		}
-		else if (*ptr == 'l' || *ptr == 'L')
-		{
-			*ptr = '1';
+			if (*ptr == alpha[k] || *ptr == alpha[++k])
+			{
+				*ptr = 48 + num[k];
+			}
 		}
 		ptr++;
 	}
-
 	return (str);
 }
