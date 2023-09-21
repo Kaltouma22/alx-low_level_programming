@@ -19,7 +19,7 @@ char *cap_string(char *str)
 			*ptr = *ptr - ('a' - 'A');
 			new_word = false;
 		}
-		else if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n' || *ptr == ',' || *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '?' || *ptr == '"' || *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
+		else if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n')
 		{
 			new_word = true;
 		}
