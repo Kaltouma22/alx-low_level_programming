@@ -5,7 +5,7 @@
  * *leet - that encodes a string into 1337
  * @str: The string to be modified.
  *
- * Return: return 0
+ * Return: return str
 */
 
 char *leet(char *str)
