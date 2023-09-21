@@ -1,4 +1,12 @@
 #include "main.h"
+#include <stdio.h>
+
+/**
+ * *leet - that encodes a string into 1337
+ * @str: The string to be modified.
+ *
+ * Return: return 0
+*/
 
 char *leet(char *str)
 {
