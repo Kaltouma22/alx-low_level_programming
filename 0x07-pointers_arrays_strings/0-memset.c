@@ -4,6 +4,7 @@
  * *_memset - that fills memory with a constant byte
  * @s: is a pointer to the memory
  * @b: is the constant byte
+ * @n: is the number of byte to fille
  * Return: return s
 */
 
