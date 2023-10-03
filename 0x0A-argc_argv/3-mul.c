@@ -5,19 +5,23 @@
  * main-that multiplies two number
  * @argc: that represents the number of cmdl
  * @argv: it's an array of string containing the cmdl
- * Return: return 0
+ * Return:0-seccess, Non-zero-fail
  */
 
 int main(int argc, char *argv[])
 {
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
-	int result = num1 * num2;
+	int result;
 
-	if (argc != 3)
+	if (argc == 3)
+	{
+		result = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", result);
+	}
+	else
 	{
 		printf("Error\n");
+		return (1);
 	}
-	printf("%d\n", result);
+
 	return (0);
 }
