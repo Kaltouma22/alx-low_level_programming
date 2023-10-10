@@ -28,12 +28,11 @@ int _strlen(const char *s)
 
 char *_strcopy(char *t, char *r)
 {
-	int j = 0;
+	int j;
 
-	while (r[j])
+	for (j = 0; r[j]; j++)
 	{
 		t[j] = r[j];
-		j++;
 	}
 	t[j] = '\0';
 
