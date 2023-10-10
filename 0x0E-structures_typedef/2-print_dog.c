@@ -6,8 +6,6 @@
  * print_dog - a function that prints a struct dog
  * @d: a pointer to a struct dog to print
  *
- * Description: this function is useful for displaying the details
- * of a dog structure
  * Return: void.
  */
 
