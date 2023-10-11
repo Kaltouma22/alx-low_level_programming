@@ -6,23 +6,20 @@
  * the search will be performed.
  * @size: The size of the array
  * @cmp: A function pointer representing the comparison function
- * Return: return -1
+ * Return: return integer index
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
-	for (i = 0; i < size; i++)
+	if (array && size && cmp)
 	{
-		if (cmp(array[i]))
+		for (i = 0; i < size; i++)
 		{
-			return (i);
+			if (cmp(array[i]))
+				return (i);
 		}
-	}
-	if (size <= 0)
-	{
-		return (-1);
 	}
 	return (-1);
 }
