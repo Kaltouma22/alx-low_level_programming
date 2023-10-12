@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * struct token - that categorizes the token's role
+ * @token: a character
+ * @f: a function
+ */
+
 typedef struct token
 {
 	char *token;
