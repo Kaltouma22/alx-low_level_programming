@@ -1,57 +1,52 @@
 #include "main.h"
 
+#define READ_BUF_SIZE 1024
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
+
+#define USAGE "Usage: cp file_from file_to\n"
+#define ERR_NOREAD "Error: Can't read from file %s\n"
+#define ERR_NOWRITE "Error: Can't write to %s\n"
+#define ERR_NOCLOSE "Error: Can't close fd %d\n"
+
 /**
  * main - Copy the content of a file to another file.
  * @argc: The number of command-line arguments.
  * @argv: An array of strings containing the command-line arguments.
  *
- * Return: 0 on success, exit with appropriate error codes on failure.
+ * Return: 1 on success, 0 on failure.
  */
 
 int main(int argc, char *argv[])
 {
-	int source_fd = open(argv[1], O_RDONLY);
-	int destination_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	char buffer[1024];
-	ssize_t bytes_read;
+	int source_fd = 0, to_fd;
+	ssize_t bytes;
+	char buf[READ_BUF_SIZE];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, USAGE), exit(97);
+
+	source_fd = open(argv[1], O_RDONLY);
 	if (source_fd == -1)
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
+
+	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
+	if (to_fd == -1)
+		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
+
+	while ((bytes = read(source_fd, buf, READ_BUF_SIZE)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		if (write(to_fd, buf, bytes) != bytes)
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	}
-	if (destination_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-		close(source_fd);
-		exit(99);
-	}
-	while ((bytes_read = read(source_fd, buffer, sizeof(buffer))) > 0)
-	{
-		if (write(destination_fd, buffer, bytes_read) != bytes_read)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-			close(source_fd);
-			close(destination_fd);
-			exit(99);
-		}
-	}
-	if (bytes_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(source_fd);
-		close(destination_fd);
-		exit(98);
-	}
-	if (close(source_fd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
-		exit(100);
-	}
-	return (0);
+	if (bytes == -1)
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
+
+	source_fd = close(source_fd);
+	to_fd = close(to_fd);
+	if (source_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd), exit(100);
+	if (to_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd),	exit(100);
+
+	return (EXIT_SUCCESS);
 }

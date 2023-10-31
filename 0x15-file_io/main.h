@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <string.h>
 
+int main(int argc, char *argv[]);
 int my_strlen(char *s);
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
