@@ -23,30 +23,46 @@ int main(int argc, char *argv[])
 	char buf[READ_BUF_SIZE];
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, USAGE), exit(97);
-
+	{
+		dprintf(STDERR_FILENO, USAGE);
+		exit(97);
+	}
 	source_fd = open(argv[1], O_RDONLY);
 	if (source_fd == -1)
-		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
-
+	{
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]);
+		exit(98);
+	}
 	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (to_fd == -1)
-		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
-
+	{
+		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
+		exit(99);
+	}
 	while ((bytes = read(source_fd, buf, READ_BUF_SIZE)) > 0)
 	{
 		if (write(to_fd, buf, bytes) != bytes)
-			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
+		{
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
+			exit(99);
+		}
 	}
 	if (bytes == -1)
-		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
-
+	{
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]);
+		exit(98);
+	}
 	source_fd = close(source_fd);
 	to_fd = close(to_fd);
 	if (source_fd)
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd), exit(100);
+	{
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd);
+		exit(100);
+	}
 	if (to_fd)
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd),	exit(100);
-
+	{
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, source_fd);
+		exit(100);
+	}
 	return (EXIT_SUCCESS);
 }
